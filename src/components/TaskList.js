@@ -37,8 +37,15 @@ const TaskList = () => {
             <p>{task.description}</p>
             <p>Status: {task.status}</p>
             <p>Priority: {task.priority}</p>
-            <Link to={`/edit/${task._id}`}>Edit</Link>
-            <button onClick={() => handleDelete(task._id)}>Delete</button>
+            <div>
+              <Link to={`/task/${task._id}`}>View Details</Link>
+              <Link to={`/edit/${task._id}`} style={{ marginLeft: "10px" }}>
+                Edit
+              </Link>
+              <button onClick={() => handleDelete(task._id)} style={{ marginLeft: "10px" }}>
+                Delete
+              </button>
+            </div>
           </li>
         ))}
       </ul>
